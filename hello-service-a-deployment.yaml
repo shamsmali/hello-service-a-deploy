@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hello-service-a
+spec:
+  replicas: 1
+  revisionHistoryLimit: 3
+  selector:
+    matchLabels:
+      app: hello-service-a
+  template:
+    metadata:
+      labels:
+        app: hello-service-a
+    spec:
+      containers:
+        - image: shamsmali/hello-service-a:1.0.0
+          name: hello-service-a
+          ports:
+            - containerPort: 80
