@@ -41,13 +41,16 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: ingress-hello-service-a
+
 spec:
-  ingressClassName: nginx
+  ingressClassName: nginx-hello-service-a
   rules:
-      - http:
-          paths:
-            - path: /service-a
-              pathType: Prefix
-              backend:
-                serviceName: hello-service-a
-                servicePort: 80
+    - http:
+        paths:
+          - path: /service-a
+            pathType: Prefix
+            backend:
+              service:
+                name: hello-service-a-service
+                port:
+                  number: 80
