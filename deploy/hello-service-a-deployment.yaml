@@ -17,7 +17,7 @@ spec:
         - image: shamsmali/hello-service-a:1.0.1
           name: hello-service-a
           ports:
-            - containerPort: 80
+            - containerPort: 8080
 
 ---
 
@@ -33,7 +33,7 @@ spec:
   ports:
     - protocol: TCP
       port: 80
-      targetPort: 9000
+      targetPort: 8080
 
 ---
 
