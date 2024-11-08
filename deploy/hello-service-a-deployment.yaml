@@ -32,3 +32,19 @@ spec:
     - protocol: TCP
       port: 80
       targetPort: 9000
+
+---
+
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  name: ingress-hello-service-a
+spec:
+  ingressClassName: nginx
+  rules:
+      - http:
+          paths:
+            - path: /service-a
+              backend:
+                serviceName: hello-service-a
+                servicePort: 80
