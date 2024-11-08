@@ -41,9 +41,8 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: ingress-hello-service-a
-
 spec:
-  ingressClassName: nginx-hello-service-a
+  ingressClassName: nginx
   rules:
     - http:
         paths:
