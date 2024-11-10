@@ -13,10 +13,11 @@ spec:
       labels:
         app: hello-service-a
     spec:
-      containers:
-        - name: env
-          value: stage      
+      containers:    
         - image: shamsmali/hello-service-a:1.0.1
+          env:
+          - name: env
+            value: stage           
           name: hello-service-a
           ports:
             - containerPort: 8080

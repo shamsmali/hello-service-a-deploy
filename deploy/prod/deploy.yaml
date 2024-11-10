@@ -14,9 +14,10 @@ spec:
         app: hello-service-a
     spec:
       containers:
-        - name: env
-          value: prod   
         - image: shamsmali/hello-service-a:1.0.1
+          env:
+          - name: env
+            value: prod   
           name: hello-service-a
           ports:
             - containerPort: 8080
