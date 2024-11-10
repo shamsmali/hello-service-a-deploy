@@ -14,7 +14,7 @@ spec:
         app: hello-service-a
     spec:
       containers:  
-        - image: shamsmali/hello-service-a:1.0.1
+        - image: shamsmali/hello-service-a:1.0.2
           env:
           - name: env
             value: dev
