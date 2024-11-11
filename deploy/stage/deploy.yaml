@@ -21,15 +21,7 @@ spec:
           name: hello-service-a
           ports:
             - containerPort: 8080
-        # This is to setup the liveness and readiness probes more information can be found here: https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-startup-probes/
-        livenessProbe:
-          httpGet:
-            path: /ping
-            port: 8080
-        readinessProbe:
-          httpGet:
-            path: /ping
-            port: 8080
+
 ---
 
 apiVersion: v1
