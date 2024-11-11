@@ -21,7 +21,17 @@ spec:
           name: hello-service-a
           ports:
             - containerPort: 8080
-            
+          readinessProbe:
+            httpGet:
+              path: /ping
+              port: 8080
+          livenessProbe:
+            httpGet:
+              path: /ping
+              port: 8080
+            initialDelaySeconds: 30
+            periodSeconds: 10
+            timeoutSeconds: 5            
 ---
 
 apiVersion: v1

@@ -21,7 +21,6 @@ spec:
           name: hello-service-a
           ports:
             - containerPort: 8080
-
           readinessProbe:
             httpGet:
               path: /ping
